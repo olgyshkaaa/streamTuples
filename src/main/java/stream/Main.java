@@ -1,23 +1,13 @@
 package stream;
 
-import stream.model.AverageTuple;
-import stream.model.Tuple;
-import stream.util.FormatUtil;
-import stream.util.GreetServer;
+import stream.util.Server;
 
 import java.io.*;
-import java.net.*;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.net.Socket;
-import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        GreetServer server = new GreetServer();
+        Server server = new Server();
         server.start(5001);
-
-
     }
 }

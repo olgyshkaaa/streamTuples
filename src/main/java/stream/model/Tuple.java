@@ -1,15 +1,15 @@
 package stream.model;
 
 /*
- * Model for average data calculation
+ * Model for information about one person
  */
 public class Tuple {
     private Integer age;
     private Integer weight;
 
-    public Tuple(Integer age, Integer count) {
+    public Tuple(Integer age, Integer weight) {
         this.age = age;
-        this.weight = count;
+        this.weight = weight;
     }
 
     public Integer getAge() {

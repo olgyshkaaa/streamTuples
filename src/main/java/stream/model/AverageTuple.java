@@ -12,6 +12,11 @@ public class AverageTuple {
         this.count = 0;
     }
 
+    public AverageTuple(Integer sum, Integer count) {
+        this.sum = sum;
+        this.count = count;
+    }
+
     public Integer getSum() {
         return sum;
     }

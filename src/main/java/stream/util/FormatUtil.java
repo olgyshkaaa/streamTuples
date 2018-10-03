@@ -1,9 +1,7 @@
 package stream.util;
 
 import stream.model.AverageTuple;
-import stream.model.Tuple;
 
-import java.util.Map;
 import java.util.regex.Pattern;
 
 public class FormatUtil {
@@ -15,22 +13,13 @@ public class FormatUtil {
         return data;
     }
 
-    public static void formatInputStream(String tuple, Map<Integer, Tuple> patients, AverageTuple[] data) {
+    public static Integer[] formatInputStream(String tuple) {
         String[] tupleSplit = tuple.split(Pattern.quote("|"));
-        Integer id = Integer.parseInt(tupleSplit[0]);
-        Integer age = Integer.parseInt(tupleSplit[1]);
-        Integer weight = Integer.parseInt(tupleSplit[2].trim());
-
-        if (patients.get(id) == null) {
-            patients.put(id, new Tuple(age, weight));
-            CalculateUtil.addData(age, weight, data);
-        } else {
-            if (patients.get(id).getAge() > age) {
-                patients.put(id, new Tuple(age, weight));
-                CalculateUtil.changeData(age, weight, data);
-                CalculateUtil.addData(age, weight, data);
-            }
-        }
+        Integer[] tupleInt = new Integer[3];
+        tupleInt[0] = Integer.parseInt(tupleSplit[0]);
+        tupleInt[1] = Integer.parseInt(tupleSplit[1]);
+        tupleInt[2] = Integer.parseInt(tupleSplit[2].replace("\\n",""));
+        return tupleInt;
     }
 
     public static String formatOutputStream(AverageTuple[] tuples) {
