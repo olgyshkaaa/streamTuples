@@ -28,7 +28,7 @@ public class FormatUtil {
             output.append(tuples[i].getCount() == 0 ?
                     "|" : String.valueOf(tuples[i].getSum() / tuples[i].getCount()) + "|");
         }
-        return output.toString();
+        return output.substring(0, output.length() - 1);
     }
 
 

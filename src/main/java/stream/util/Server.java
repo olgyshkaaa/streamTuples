@@ -26,7 +26,7 @@ public class Server {
         while ((inputLine = in.readLine()) != null) {
             AverageTuple[] data = calculation.calculateAverage(FormatUtil.formatInputStream(inputLine));
             count++;
-            if (count % 1000 == 0 && count != 0) {
+            if (count % 1000 == 0) {
                 out.println(FormatUtil.formatOutputStream(data));
             }
         }

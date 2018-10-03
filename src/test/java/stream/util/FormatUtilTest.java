@@ -33,21 +33,21 @@ public class FormatUtilTest {
         data[1] = new AverageTuple(3,2);
         data[2] = new AverageTuple(10, 3);
         String str = FormatUtil.formatOutputStream(data);
-        assertEquals(str, "|1|3|");
+        assertEquals(str, "|1|3");
         data[0] = new AverageTuple(3,2);
         data[1] = new AverageTuple();
         data[2] = new AverageTuple(10, 3);
         str = FormatUtil.formatOutputStream(data);
-        assertEquals(str, "1||3|");
+        assertEquals(str, "1||3");
         data[0] = new AverageTuple(3,2);
         data[1] = new AverageTuple(10, 3);
         data[2] = new AverageTuple();
         str = FormatUtil.formatOutputStream(data);
-        assertEquals(str, "1|3||");
+        assertEquals(str, "1|3|");
         data[0] =new AverageTuple();
         data[1] =new AverageTuple();
         data[2] = new AverageTuple();
         str = FormatUtil.formatOutputStream(data);
-        assertEquals(str, "|||");
+        assertEquals(str, "||");
     }
 }
