@@ -6,6 +6,9 @@ import stream.model.AverageTuple;
 
 import static org.junit.Assert.assertEquals;
 
+/*
+ * Average data calculation class testing
+ */
 public class CalculationTest {
 
     @Test
@@ -19,11 +22,11 @@ public class CalculationTest {
         AverageTuple[] result2 = calculation.calculateAverage(data2);
         assertEquals((Integer) 140, result2[4].getSum());
         assertEquals((Integer) 2, result2[4].getCount());
-        Integer[] data3 = {3, 63, 80};
+        Integer[] data3 = {3, 69, 80};
         AverageTuple[] result3 = calculation.calculateAverage(data3);
         assertEquals((Integer) 80, result3[6].getSum());
         assertEquals((Integer) 1, result3[6].getCount());
-        Integer[] data4 = {3, 73, 80};
+        Integer[] data4 = {3, 70, 80};
         AverageTuple[] result4 = calculation.calculateAverage(data4);
         assertEquals((Integer) 0, result4[6].getSum());
         assertEquals((Integer) 0, result4[6].getCount());
