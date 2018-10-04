@@ -4,8 +4,6 @@ import stream.server.Server;
 import stream.util.DataUtil;
 
 import java.io.*;
-import java.rmi.AccessException;
-import java.util.Properties;
 
 
 public class Main {
@@ -17,5 +15,4 @@ public class Main {
         Server server = new Server();
         server.start(port, batchSize);
     }
-
 }
