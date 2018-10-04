@@ -1,6 +1,8 @@
-package stream.util;
+package stream.server;
 
-import stream.model.AverageTuple;
+import stream.model.OutgoingTuple;
+import stream.util.Calculator;
+import stream.util.DataUtil;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -25,9 +27,9 @@ public class Server {
         BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         String inputLine;
         int count = 0;
-        Calculation calculation = new Calculation();
+        Calculator calculator = new Calculator();
         while ((inputLine = in.readLine()) != null) {
-            AverageTuple[] data = calculation.calculateAverage(DataUtil.formatInputStream(inputLine));
+            OutgoingTuple[] data = calculator.calculateAverage(DataUtil.formatInputStream(inputLine));
             count++;
             if (count % batchSize == 0) {
                 out.println(DataUtil.formatOutputStream(data));

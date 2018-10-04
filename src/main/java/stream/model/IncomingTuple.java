@@ -3,11 +3,11 @@ package stream.model;
 /*
  * Model for information about one person
  */
-public class Tuple {
+public class IncomingTuple {
     private Integer age;
     private Integer weight;
 
-    public Tuple(Integer age, Integer weight) {
+    public IncomingTuple(Integer age, Integer weight) {
         this.age = age;
         this.weight = weight;
     }

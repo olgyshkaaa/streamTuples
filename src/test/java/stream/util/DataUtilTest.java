@@ -1,7 +1,7 @@
 package stream.util;
 
 import org.junit.Test;
-import stream.model.AverageTuple;
+import stream.model.OutgoingTuple;
 
 import static org.junit.Assert.*;
 
@@ -13,7 +13,7 @@ public class DataUtilTest {
 
     @Test
     public void testPrepareData() {
-        AverageTuple[] data = new AverageTuple[3];
+        OutgoingTuple[] data = new OutgoingTuple[3];
         DataUtil.prepareData(data);
         assertEquals(data[1].getCount(), (Integer) 0 );
         assertEquals(data[2].getSum(), (Integer) 0 );
@@ -30,25 +30,25 @@ public class DataUtilTest {
 
     @Test
     public void testFormatOutputStream() {
-        AverageTuple[] data = DataUtil.prepareData(new AverageTuple[3]);
-        data[0] = new AverageTuple();
-        data[1] = new AverageTuple(3,2);
-        data[2] = new AverageTuple(10, 3);
+        OutgoingTuple[] data = DataUtil.prepareData(new OutgoingTuple[3]);
+        data[0] = new OutgoingTuple();
+        data[1] = new OutgoingTuple(3, 2);
+        data[2] = new OutgoingTuple(10, 3);
         String str = DataUtil.formatOutputStream(data);
         assertEquals(str, "|1|3");
-        data[0] = new AverageTuple(3,2);
-        data[1] = new AverageTuple();
-        data[2] = new AverageTuple(10, 3);
+        data[0] = new OutgoingTuple(3, 2);
+        data[1] = new OutgoingTuple();
+        data[2] = new OutgoingTuple(10, 3);
         str = DataUtil.formatOutputStream(data);
         assertEquals(str, "1||3");
-        data[0] = new AverageTuple(3,2);
-        data[1] = new AverageTuple(10, 3);
-        data[2] = new AverageTuple();
+        data[0] = new OutgoingTuple(3, 2);
+        data[1] = new OutgoingTuple(10, 3);
+        data[2] = new OutgoingTuple();
         str = DataUtil.formatOutputStream(data);
         assertEquals(str, "1|3|");
-        data[0] =new AverageTuple();
-        data[1] =new AverageTuple();
-        data[2] = new AverageTuple();
+        data[0] = new OutgoingTuple();
+        data[1] = new OutgoingTuple();
+        data[2] = new OutgoingTuple();
         str = DataUtil.formatOutputStream(data);
         assertEquals(str, "||");
     }

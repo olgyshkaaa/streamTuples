@@ -3,16 +3,16 @@ package stream.model;
 /*
  * Model for average data calculation
  */
-public class AverageTuple {
+public class OutgoingTuple {
     private Integer sum;
     private Integer count;
 
-    public AverageTuple() {
+    public OutgoingTuple() {
         this.sum = 0;
         this.count = 0;
     }
 
-    public AverageTuple(Integer sum, Integer count) {
+    public OutgoingTuple(Integer sum, Integer count) {
         this.sum = sum;
         this.count = count;
     }
